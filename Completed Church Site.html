@@ -1,0 +1,145 @@
+<!DOCTYPE html>    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resurgence Church - Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Welcome to Resurgence Church.
+</head>
+<body> 
+    <header> class="site-header">
+        <div class="container nav" role="navigation" aria-label="Primary">
+            <a class="brand" href="index.html">
+        <!--Simple brand mark: cross inside a circle; decoritive so aria-hidden-->
+        <div class ="brand-mark" aria-hidden="true"></div>
+       <span class="brand-title"></span>
+            </a>    
+        <!--N Mobile-friendly nav: button toggles the menue with small JS below -->
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu </button>
+        <nav id="menu" class="menu">
+            <!-- ARIA-CURRENT MARKS THE CURRENT PAGE FOR ASSISTIVE TECH -->
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="belifs.html">Beliefs</a>
+            <a href="Visirt.html">Visit Us</a>
+
+         </nav>
+        </div>
+    </header>
+
+
+
+
+    <!-- Small, unobtrusive JS: if it fails, links still work. -->
+  <script>
+    const header = document.currentScript.previousElementSibling;
+    const btn = header.querySelector('.menu-toggle');
+    const menu = header.querySelector('#menu');
+    btn?.addEventListener('click', () => {
+      const open = !menu.classList.contains('show');
+      menu.classList.toggle('show', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  </script>
+    
+
+
+
+
+    <main>
+        <section class="hero">
+        <div class="container>
+        <div class="eyebrow">Welcome</div>
+        <h1>A church that is seeking the Lord.</h1>
+        <p>Join us Sunday for worship and reading of God's Holy and inspired word.</p>
+        <div class="cta-row">
+            <a class="button-primary" href="visit.html">Visit Us</a>
+            <a class="button" href="belifs.html">What we believe</a>
+        
+        </div>
+        </div>
+        </section>
+
+
+
+        <!--Guides visitors to key pages-->
+
+        <section class="container section" aria-labbeledby='quick-links'>
+            <h2 id='quick-link' class="section-title">Get to know us</h2>
+          <div class="cards">
+            <article class="card">
+                <span class="badge">Start Here</span>
+                <h3>About Us</h3>
+                <p>Who we are, our mission, and our story rooted in the Gospel.</p>
+                <a href=""about.html">Learn More</a>
+            </article>
+
+            <article class="card">
+                <span class="badge">Our Faith</span>
+                <h3>Beliefs</h3>
+                <p>Our statment of faith.</p>
+                <a href="beliefs.html">Read Beliefs</a>
+            </article>
+
+
+            <article class="card">
+                <span clsass="badge">Visit</span>
+                <h3>Service Times and Location</h3>
+                <p>Join us for worship and fellowship.</p>
+                <a href="visit.html">Find Us</a>
+            </article>
+             </div>
+        </section>
+
+
+        
+    <!-- Info split: sermon/series & map -->
+    <section class="section">
+      <div class="container info">
+        <div class="panel">
+        
+          <ul>
+            <li>9:00 AM — Worship Gathering</li>
+            <li>11:00 AM — Worship Gathering & Kids</li>
+          </ul>
+          <p>“Your word is a lamp to my feet and a light to my path.” — Psalm 119:105</p>
+        </div>
+        <div class="panel">
+          <h3>Find Us</h3>
+          <!-- Replace the src with your church address via Google Maps Embed -->
+          <iframe class="map-embed" title="Map to Grace Fellowship"
+            src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer = site-wide info and secondary links -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:.6rem">
+          <div class="brand-mark" aria-hidden="true">†</div>
+          <strong>Resurgence Church</strong>
+        </div>
+        <div class="kicker">“Let the word of Christ dwell in you richly…” — Colossians 3:16</div>
+      </div>
+      <div>
+        <strong>Gather</strong><br/>
+        Sunday School 10:00 & Church at 11:00 AM<br/>
+        
+      </div>
+      <div>
+        <strong>Contact</strong><br/>
+       236 2nd Street , Paintsville, KY<br/>
+        (606)372-1241<br/>
+       
+      </div>
+    </div>
+    <div class="footer-base container">© <span id="year"></span> Resurgence Church. All rights reserved.</div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
